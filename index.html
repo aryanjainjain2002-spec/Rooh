@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ROOH – Virasat se Vyapar Tak</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🪔%3C/text%3E%3C/svg%3E">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Yatra+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="bar">
+    <a class="brand" href="#home">ROOH</a>
+    <nav>
+      <a href="#home">Home</a><a href="#register">Join as artisan</a><a href="#market">Marketplace</a><a href="#collab">Designers</a><a href="#impact">Impact</a>
+    </nav>
+  </div>
+  <div class="strip"></div>
+</header>
+
+<main>
+<section id="home">
+  <div class="hero">
+    <h1>Virasat se<br>Vyapar Tak</h1>
+    <p class="lead">ROOH connects Rajasthan's tribal artisans to new markets with training, branding and fair income.</p>
+    <div class="row"><a class="btn" href="#market">Explore crafts</a><a class="btn ghost" href="#register">Join as artisan</a></div>
+  </div>
+
+  <h2>How ROOH works</h2>
+  <ol class="grid steps">
+    <li class="card"><h3>Discover</h3><p>Catalysts and women's SHGs find artisans in their villages and build trust.</p></li>
+    <li class="card"><h3>Standardise</h3><p>Training closes the gap between what artisans make and what buyers want.</p></li>
+    <li class="card"><h3>Brand</h3><p>Packaging, photography and the artisan's story go with every product.</p></li>
+    <li class="card"><h3>Sell</h3><p>Customers buy online, and hotels and companies order in bulk.</p></li>
+  </ol>
+
+  <h2>Artisan stories</h2>
+  <div class="grid" id="stories"></div>
+
+  <div class="card calc">
+    <h2>The artisan economy</h2>
+    <label>An artisan makes a product for ₹ <input id="cin" type="number" min="1" value="500"></label>
+    <p>With training, packaging, branding, photography, marketing and logistics it can sell for</p>
+    <p class="big" id="cout"></p>
+  </div>
+</section>
+
+<section id="register" hidden>
+  <h2>Artisan registration</h2>
+  <p class="sub">A ROOH catalyst can fill this in with you. Your phone number is only seen by ROOH.</p>
+  <form id="reg" class="card form">
+    <label>Name<input name="name" required></label>
+    <label>Village<input name="village" required></label>
+    <label>District<input name="district" value="Tonk" required></label>
+    <label>Craft / skill<select name="craft" id="rcraft"></select></label>
+    <label>Products you make<input name="products" placeholder="e.g. namda rugs, cushion covers" required></label>
+    <label>Production capacity (pieces per month)<input name="cap" type="number" min="1" required></label>
+    <label>Contact number<input name="phone" type="tel" pattern="[0-9+ ]{10,14}" required></label>
+    <label>Photo of your work<input name="photo" type="file" accept="image/*"></label>
+    <label class="chk"><input name="women" type="checkbox"> Woman artisan or member of a women's SHG</label>
+    <button class="btn">Register artisan</button>
+  </form>
+  <h3>Recently joined</h3>
+  <div class="grid" id="joined"></div>
+</section>
+
+<section id="market" hidden>
+  <h2>Craft marketplace</h2>
+  <p class="sub">Traditional crafts and modern products made from them.</p>
+  <input id="q" class="search" type="search" placeholder="Search namda, bamboo, cushion…" aria-label="Search products">
+  <div class="chips" id="chips"></div>
+  <div class="grid" id="grid"></div>
+</section>
+
+<section id="collab" hidden>
+  <h2>Youth and designer collaboration</h2>
+  <p class="sub">Pick an artisan, propose a contemporary product, and ROOH connects you.</p>
+  <form id="idea" class="card form">
+    <label>Your name<input name="who" required></label>
+    <label>Artisan to work with<select name="art" id="cart"></select></label>
+    <label>Product concept<input name="title" placeholder="e.g. Namda laptop sleeve" required></label>
+    <label>What makes it contemporary?<textarea name="note" rows="3" required></textarea></label>
+    <button class="btn">Send concept</button>
+  </form>
+  <h3>Concept board</h3>
+  <div class="grid" id="board"></div>
+</section>
+
+<section id="impact" hidden>
+  <h2>Impact dashboard</h2>
+  <div class="grid stats" id="stats"></div>
+  <div class="card"><h3>Artisans by craft</h3><div id="bars"></div></div>
+  <p class="sub">Prototype data. Artisan income assumes artisans receive 60% of order value.</p>
+  <button class="btn ghost" id="reset">Reset demo data</button>
+</section>
+</main>
+
+<footer>ROOH prototype for the iStart + MyBharat Integrated Start-up Program. Niwai, Tonk, Rajasthan.</footer>
+
+<dialog id="dlg">
+  <form id="enq" class="form">
+    <h3 id="dtitle"></h3>
+    <label>Your name<input name="who" required></label>
+    <label>You are a<select name="type"><option>Individual customer</option><option>Hotel or resort</option><option>Corporate gifting</option><option>Retail or décor store</option></select></label>
+    <label>Quantity<input name="qty" type="number" min="1" value="1" required></label>
+    <label>Note (optional)<textarea name="note" rows="2"></textarea></label>
+    <div class="row"><button class="btn">Send on WhatsApp</button><button class="btn ghost" type="button" id="dno">Cancel</button></div>
+  </form>
+</dialog>
+<div id="toast" role="status"></div>
+<script src="app.js"></script>
+</body>
+</html>

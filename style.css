@@ -1,0 +1,91 @@
+:root{--cream:#fff1e2;--tan:#f3dcc0;--coral:#ef5350;--teal:#7fb8b8;--ink:#201510;--mut:#6b5a4e;--card:#fffaf4}
+*{box-sizing:border-box;margin:0}
+body{font:15px/1.6 Poppins,system-ui,sans-serif;background:var(--cream);color:var(--ink)}
+h1,h2,h3,.brand{font-family:'Yatra One',Georgia,serif;font-weight:400}
+h2{font-size:28px;margin:36px 0 12px}
+h3{font-size:19px;margin:0 0 4px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:2px}
+
+header{position:sticky;top:0;z-index:5;background:rgba(255,241,226,.94);backdrop-filter:blur(8px)}
+.bar{max-width:1080px;margin:auto;display:flex;align-items:center;gap:18px;padding:10px 16px}
+.brand{font-size:28px;color:var(--coral);text-decoration:none;letter-spacing:2px}
+nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav a{padding:7px 14px;border-radius:99px;text-decoration:none;white-space:nowrap;font-weight:500;font-size:14px}
+nav a.on{background:var(--ink);color:var(--cream)}
+.strip{height:10px;background:repeating-linear-gradient(90deg,var(--coral) 0 28px,var(--teal) 28px 56px,#e9b872 56px 84px,var(--ink) 84px 94px)}
+
+main{max-width:1080px;margin:auto;padding:12px 16px 60px}
+section[hidden]{display:none}
+.sub,.mut{color:var(--mut)}
+.sub{margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--tan);border-radius:18px;padding:18px}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.sp{justify-content:space-between}
+
+.hero{margin-top:20px;padding:56px 32px;border-radius:28px;background:
+  radial-gradient(circle at 92% 12%,var(--coral) 0 70px,transparent 71px),
+  radial-gradient(circle at 84% 34%,var(--teal) 0 46px,transparent 47px),
+  var(--tan)}
+.hero h1{font-size:clamp(44px,9vw,88px);line-height:1.02;letter-spacing:1px}
+.lead{max-width:30em;margin:18px 0 26px;font-size:17px}
+
+.btn{border:0;border-radius:99px;background:var(--coral);color:#fff;font:600 15px Poppins,sans-serif;padding:11px 22px;cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover{background:#d9403e}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--ink)}
+.btn.ghost:hover{background:var(--ink);color:var(--cream)}
+.btn.sm{padding:7px 14px;font-size:13px}
+
+.steps{list-style:none;padding:0}
+.steps li:nth-child(odd){border-top:6px solid var(--coral)}
+.steps li:nth-child(even){border-top:6px solid var(--teal)}
+
+.ar{display:flex;gap:14px;align-items:center}
+.av{flex:none;width:64px;height:64px;border-radius:50%;overflow:hidden}
+.av img,.av span{width:100%;height:100%;object-fit:cover;display:grid;place-items:center;font:28px 'Yatra One',serif}
+.tag{font-size:13px;color:var(--coral);font-weight:500}
+
+.calc{margin-top:32px;background:var(--ink);color:var(--cream);border:0}
+.calc h2{margin-top:0}
+.calc input{width:110px;margin:0 6px}
+.big{font:clamp(30px,6vw,46px) 'Yatra One',serif;color:var(--teal);margin-top:6px}
+
+.form{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-bottom:24px}
+.form h3,.form .btn,.form .row,.chk,.form label:has(textarea){grid-column:1/-1}
+label{display:grid;gap:4px;font-weight:500;font-size:14px}
+.chk{display:flex;gap:8px;align-items:center}
+input,select,textarea{font:inherit;padding:10px 12px;border-radius:12px;border:1.5px solid var(--tan);background:#fff;width:100%}
+.chk input{width:auto}
+.form .btn{justify-self:start}
+.search{margin:6px 0 12px;max-width:420px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.chips button{border:1.5px solid var(--ink);background:transparent;border-radius:99px;padding:6px 14px;font:500 13px Poppins,sans-serif;cursor:pointer}
+.chips button.on{background:var(--ink);color:var(--cream)}
+
+.pr{padding:0;overflow:hidden}
+.pic{position:relative;height:150px;display:grid;place-items:center;font-size:56px;background:
+  repeating-conic-gradient(var(--c) 0 25%,color-mix(in srgb,var(--c) 75%,#fff) 0 50%) 0 0/30px 30px}
+.badge{position:absolute;top:10px;left:10px;font:600 12px Poppins,sans-serif;padding:3px 10px;border-radius:99px;background:var(--cream)}
+.badge.Modern{background:var(--ink);color:var(--cream)}
+.pb{padding:14px 16px 16px}
+
+.stages{list-style:none;padding:0;margin:10px 0;display:flex;flex-wrap:wrap;gap:6px}
+.stages li{font-size:12px;padding:3px 10px;border-radius:99px;background:var(--tan);color:var(--mut)}
+.stages li.done{background:var(--teal);color:var(--ink);font-weight:600}
+
+.stats{grid-template-columns:repeat(auto-fit,minmax(160px,1fr));margin-bottom:16px}
+.stats .card{border-left:6px solid var(--coral)}
+.stats .card:nth-child(even){border-left-color:var(--teal)}
+.stats b{display:block;font:34px 'Yatra One',serif}
+.bar-row{display:grid;grid-template-columns:120px 1fr 28px;gap:10px;align-items:center;margin:8px 0;font-size:14px}
+.bar-row i{display:block;height:14px;border-radius:99px;background:var(--coral)}
+#reset{margin-top:6px}
+
+dialog{border:0;border-radius:20px;padding:22px;width:min(440px,92vw);margin:auto;background:var(--card)}
+dialog::backdrop{background:rgba(32,21,16,.55)}
+#toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,40px);background:var(--ink);color:var(--cream);padding:11px 20px;border-radius:99px;opacity:0;transition:.25s;pointer-events:none;z-index:9}
+#toast.show{opacity:1;transform:translate(-50%,0)}
+footer{text-align:center;padding:24px 16px;color:var(--mut);font-size:13px;border-top:1px solid var(--tan)}
+@media(max-width:560px){.hero{padding:36px 20px}.bar{gap:8px}.brand{font-size:24px}}
+@media(prefers-reduced-motion:reduce){#toast{transition:none}}
